@@ -11,11 +11,41 @@
 <body>
     <style>
         .template { display:none; }
+        .name {
+            font-weight:bold;
+        }
+        .price {
+            font-size:70%;
+        }
+        .address,.notes {
+            margin-top:0px;
+            margin-bottom:0px;
+        }
+        .address {
+            font-size:80%;
+        }
+        .notes {
+            font-size:70%;
+        }
     </style>
-
+    <div id="column" class="template">
+        <div class="span3">
+            <div class="row-fluid">
+                <h2>{{category}}</h2>
+            </div> <!-- /.row-fluid -->
+            {{#places}}
+            <div class="row-fluid">
+                <span class="name">{{name}}</span>
+                <span class="price">{{price}}</span>
+                <p class="address"> {{address}} </p>
+                <p class="notes"> {{{notes}}} </p>
+            </div> <!-- /.row-fluid -->
+            {{/places}}
+        </div> <!-- /.span3 -->
+    </div> <!-- /#column.template -->
     <script>
         var data = [{
-            category: "Vegan Restaurants",
+            category: "Vegan ",
             places: [{
                 name: "Dough Bakery",
                 price: "$",
@@ -28,7 +58,7 @@
                 notes: "cupcakes, pastries, breakfast sandwiches, lunch"
             }]
         }, {
-            category: "Vegetarian Restaurants",
+            category: "Vegetarian ",
             places: [{
                 name: "Cafe Sunflower - two locations",
                 price: "$$",
@@ -41,7 +71,7 @@
                 notes: "Ask for the dairy-free thali"
             }]
         }, {
-            category: "Vegan Friendly Restaurants",
+            category: "Vegan Friendly ",
             places: [{
                 name: "Bahel Ethiopian Restaurant",
                 price: "$$",
@@ -67,21 +97,6 @@
             }]
         }]; // being a list of columns
     </script>
-    <div id="column" class="template">
-        <div class="span3">
-            <div class="row-fluid">
-                <h2>{{category}}</h2>
-            </div> <!-- /.row-fluid -->
-            {{#places}}
-            <div class="row-fluid">
-                <span class="title">{{name}}</span>
-                <span class="price">{{price}}</span>
-                <p class="address"> {{address}} </p>
-                <p class="notes"> {{notes}} </p>
-            </div> <!-- /.row-fluid -->
-            {{/places}}
-        </div> <!-- /.span3 -->
-    </div> <!-- /#column.template -->
     <div id="content" class="container-fluid">
         <div class="row-fluid">
             <!-- render each column template here -->
