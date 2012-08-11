@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atlanta Vegan Restaurant Guide</title>
+    <link rel="Stylesheet" href="css/bootstrap.min.css" />
+    <link rel="Stylesheet" href="css/bootstrap-responsive.min.css" />
+    <script src="js/mustache.js"></script>
+    <script src="js/xui.js"></script>
+    <script>window.$ = x$;</script>
+</head>
+<body>
+    <style>
+        .template { display:none; }
+    </style>
+
+    <script>
+        var data = [{
+            category: "Vegan Restaurants",
+            places: [{
+                name: "Dough Bakery",
+                price: "$",
+                address: "100 Hurt St NE 30307; (404) 380-1400",
+                notes: "cookies, pie, sticky buns, soft-serve, milkshakes"
+            }, {
+                name: "Dulce Vegan Bakery & Cafe",
+                price: "$",
+                address: "1994 Hosea L Williams Dr 30317; (404) 624-7417",
+                notes: "cupcakes, pastries, breakfast sandwiches, lunch"
+            }]
+        }, {
+            category: "Vegetarian Restaurants",
+            places: [{
+                name: "Cafe Sunflower - two locations",
+                price: "$$",
+                address: "2140 Peachtree Rd; (404) 352-8859",
+                notes: "New American upscale veg dining, good for dates.<br />5975 Roswell Rd; (404) 256-1675 Family-friendly"
+            }, {
+                name: "Chat Patti Indian Vegetarian",
+                price: "$",
+                address: "1594 Woodcliff Dr NE # F 30329;  (404)633-5595",
+                notes: "Ask for the dairy-free thali"
+            }]
+        }, {
+            category: "Vegan Friendly Restaurants",
+            places: [{
+                name: "Bahel Ethiopian Restaurant",
+                price: "$$",
+                address: "3125 Briarcliff Rd NE 30329; (404) 325-6000",
+                notes: "veg dishes are prepared w/ corn oil, not butter"
+            }, {
+                name: "Blossom Tree",
+                price: "$",
+                address: "64 Peachtree St NW 30303; (404) 223-7500",
+                notes: "Korean tofu tacos, fried sweet potatoes"
+            }]
+        }, {
+            category: "Grocery",
+            places: [{
+                name: "Buford Highway Farmer's Market",
+                address: "5600 Buford Hwy NE 30340; (770) 455-0770",
+                notes: "massive international market, Korean cafe in back"
+            }, {
+                name: "Rainbow Grocery",
+                price: "$",
+                address: "2118 N Decatur Rd 30033; (404) 636-5553",
+                notes: "full grocery with mostly-vegan hot bar"
+            }]
+        }]; // being a list of columns
+    </script>
+    <div id="column" class="template">
+        <div class="span3">
+            <div class="row-fluid">
+                <h2>{{category}}</h2>
+            </div> <!-- /.row-fluid -->
+            {{#places}}
+            <div class="row-fluid">
+                <span class="title">{{name}}</span>
+                <span class="price">{{price}}</span>
+                <p class="address"> {{address}} </p>
+                <p class="notes"> {{notes}} </p>
+            </div> <!-- /.row-fluid -->
+            {{/places}}
+        </div> <!-- /.span3 -->
+    </div> <!-- /#column.template -->
+    <div id="content" class="container-fluid">
+        <div class="row-fluid">
+            <!-- render each column template here -->
+        </div> <!-- /.row-fluid -->
+    </div> <!-- /.container-fluid -->
+    <script>
+        var column_tmpl = $('#column.template').html()[0];
+        console.log(column_tmpl);
+        $('#content div.row-fluid').html(data.reduce(function(p, c) {
+            console.log(p);
+            console.log(c);
+            return p + Mustache.render(column_tmpl, c);
+        }, ""));
+    </script>
+</body>
+</html>
