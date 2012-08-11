@@ -15,3 +15,8 @@
 .notes {
     font-size:70%;
 }
+
+/* bootstrap extensions */
+#content {
+    margin-top:43px;
+}
