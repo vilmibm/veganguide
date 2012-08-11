@@ -8,8 +8,6 @@
     <script src="js/mustache.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="js/bootstrap-collapse.js"></script>
-    <script src="js/bootstrap-modal.js"></script>
     <script src="js/data.js"></script>
 </head>
 <body>
@@ -44,8 +42,8 @@
                 <a class="brand" href="#">Atlanta Vegan Restaurant Guide</a>
                 <div class="nav-collapse">
                     <ul class="nav">
-                        <li><a href="#">Suggest</a></li>
-                        <li><a href="#">Donate</a></li>
+                        <li><a data-toggle="modal" href="#suggest">Suggest <i class="icon-comment icon-white"></i></a></li>
+                        <li><a data-toggle="modal" href="#donate">Donate <i class="icon-gift icon-white"></i></a></li>
                         <li>
                             <form class="navbar-search">
                                 <input type="text" class="search-query" placeholder="Search">
@@ -61,6 +59,49 @@
             <!-- render each column template here -->
         </div> <!-- /.row-fluid -->
     </div> <!-- /.container-fluid -->
+    <div class="modal fade" id="suggest">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><i class="icon-remove"></i></button>
+            <h3>Suggest a place!</h3>
+        </div> <!-- /.modal-header -->
+        <div class="modal-body">
+            <p>This guide wouldn't exist without an awesome vegan community
+            brainstorming on what should be here. Is a favorite place of yours
+            missing? Let us know! A human will approve it and add it to the
+            site in a few days.</p>
+            <form class="well">
+                <label>Label name</label>
+                    <input type="text" class="span3" placeholder="Type something.">
+                    <span class="help-block">Example block-level help text here.</span>
+                    <label class="checkbox">
+                    <input type="checkbox"> Check me out
+                </label>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div> <!-- /.modal-body -->
+        <div class="modal-footer">
+            <a href="#" class="btn" data-dismiss="modal">Close</a>
+        </div> <!-- /.modal-footer -->
+    </div> <!-- /.modal -->
+    <div class="modal fade" id="donate">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><i class="icon-remove"></i></button>
+            <h3>Donate to the ATL Veg Guide</h3>
+        </div> <!-- /.modal-header -->
+        <div class="modal-body">
+            <p>
+                This guide is a volunteer effort and donations are gladly accepted. What will we use them for?
+                <ul>
+                    <li>Server costs at <a href="http://rackspace.com">Rackspace</a></li>
+                    <li>Printing costs for the paper version</li>
+                    <li>Marketing/Advertising costs</li>
+                </ul>
+            </p>
+        </div> <!-- /.modal-body -->
+        <div class="modal-footer">
+            <a href="#" class="btn" data-dismiss="modal">Close</a>
+        </div> <!-- /.modal-footer -->
+    </div> <!-- /.modal -->
     <script>
         var column_tmpl = $('#column.template').html();
         $('#content div.row-fluid').html(data.reduce(function(p, c) {
