@@ -11,6 +11,12 @@ var data = [{
         price: "$",
         address: "1994 Hosea L Williams Dr 30317; (404) 624-7417",
         notes: "cupcakes, pastries, breakfast sandwiches, lunch"
+    //}, {
+    //    name: "",
+    //    price: "",
+    //    address: "",
+    //    notes: "",
+    //    map: ""
     }]
 }, {
     category: "Vegetarian ",
