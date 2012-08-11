@@ -4,7 +4,8 @@ var data = [{
         name: "Dough Bakery",
         price: "$",
         address: "100 Hurt St NE 30307; (404) 380-1400",
-        notes: "cookies, pie, sticky buns, soft-serve, milkshakes"
+        notes: "cookies, pie, sticky buns, soft-serve, milkshakes",
+        map: "http://goo.gl/maps/w6Y8S"
     }, {
         name: "Dulce Vegan Bakery & Cafe",
         price: "$",

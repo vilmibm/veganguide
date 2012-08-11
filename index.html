@@ -22,7 +22,12 @@
             <div class="row-fluid">
                 <span class="name">{{name}}</span>
                 <span class="price">{{price}}</span>
-                <p class="address"> {{address}} </p>
+                <p class="address">
+                    {{address}}
+                    <a href="{{map}}" target="_blank" >
+                        <i class="icon-screenshot"></i>
+                    </a>
+                </p>
                 <p class="notes"> {{{notes}}} </p>
             </div> <!-- /.row-fluid -->
             {{/places}}
