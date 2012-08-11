@@ -1,0 +1,17 @@
+.template { display:none; }
+.name {
+    font-weight:bold;
+}
+.price {
+    font-size:70%;
+}
+.address,.notes {
+    margin-top:0px;
+    margin-bottom:0px;
+}
+.address {
+    font-size:80%;
+}
+.notes {
+    font-size:70%;
+}
