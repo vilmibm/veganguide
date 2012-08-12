@@ -11,28 +11,6 @@
     <script src="js/data.js"></script>
 </head>
 <body>
-    <div id="column" class="template">
-        <div class="span3">
-            <div class="row-fluid">
-                <h2>{{category}}</h2>
-            </div> <!-- /.row-fluid -->
-            {{#places}}
-            <div class="place row-fluid">
-                <span class="name">{{#link}}<a href="{{link}}" target="_blank">{{/link}}{{name}}{{#link}}</a>{{/link}}</span>
-                <span class="price">{{price}}</span>
-                <p class="address">
-                    {{address}}
-                    {{^map_override}}
-                    <a href="https://maps.google.com/maps?q={{map}}" target="_blank" >
-                        <i class="icon-map-marker"></i>
-                    </a>
-                    {{/map_override}}
-                </p>
-                <p class="notes"> {{{notes}}} </p>
-            </div> <!-- /.row-fluid -->
-            {{/places}}
-        </div> <!-- /.span3 -->
-    </div> <!-- /#column.template -->
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
@@ -45,7 +23,6 @@
                 <div class="nav-collapse">
                     <ul class="nav">
                         <li><a data-toggle="modal" href="#suggest">Suggest <i class="icon-comment icon-white"></i></a></li>
-                        <li><a data-toggle="modal" href="#donate">Donate <i class="icon-gift icon-white"></i></a></li>
                         <li><a id="random" href="#">Random! <i class="icon-random icon-white"></i></a></li>
                         <li>
                             <form class="navbar-search">
