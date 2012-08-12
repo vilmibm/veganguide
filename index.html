@@ -19,7 +19,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <a class="brand" href="#">Atlanta Vegan Restaurant Guide</a>
+                <a id="title" class="brand" href="#">Atlanta Vegan Restaurant Guide</a>
                 <div class="nav-collapse">
                     <ul class="nav">
                         <li><a data-toggle="modal" href="#suggest">Suggest <i class="icon-comment icon-white"></i></a></li>
@@ -30,7 +30,7 @@
                             </form>
                         </li>
                     </ul> <!-- /.nav -->
-                    <span class="brand">Brought to you by <a href="http://cracktheplates.com"> Crack the Plates</a>!</span>
+                    <span id="subtitle" class="brand"></span>
                 </div> <!-- /.nav-collapse -->
             </div> <!-- /.container -->
         </div> <!-- /.navbar-inner -->
@@ -42,7 +42,7 @@
     </div> <!-- /.container-fluid -->
     <hr>
     <footer>
-        All location data &#169;  <a href="http://cracktheplates.com">crack the plates</a>. website code is <a href="http://github.com/nathanielksmith/vegguide">open source</a> and written by <a href="http://chiptheglasses.com">chip the glasses</a>.
+        <span id="footer"></span> website code is <a href="http://github.com/nathanielksmith/vegguide">open source</a> and written by <a href="http://chiptheglasses.com">chip the glasses</a>.
     </footer>
 
     <!-- Modals -->
@@ -175,6 +175,7 @@
                 <span class="price">{{price}}</span>
                 <p class="address">
                     {{address}}
+                    <span class="phone">{{phone}}</span>
                     {{^map_override}}
                     <a href="https://maps.google.com/maps?q={{map}}" target="_blank" >
                         <i class="icon-map-marker"></i>

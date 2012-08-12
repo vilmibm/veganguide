@@ -1,7 +1,12 @@
 // data is provided by data.js. See that file for its structure.
 
+// set customizations
+['title', 'subtitle', 'footer'].forEach(function(x) {
+    $('#'+x).html(data[x])
+});
+
 // add map function
-data.forEach(function(column) {
+data.columns.forEach(function(column) {
     column.places.forEach(function(p) {
         // gutenfleischers, mysore woodlands, graveyard, revolution, spoon west, we suki suki, arden's, tradjoe, wf
         p.map = function() {
@@ -12,7 +17,7 @@ data.forEach(function(column) {
 
 // lay out data
 var column_tmpl = $('#column.template').html();
-$('#content div.row-fluid').html(data.reduce(function(p, c) {
+$('#content div.row-fluid').html(data.columns.reduce(function(p, c) {
     return p + Mustache.render(column_tmpl, c);
 }, ""));
 
