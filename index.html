@@ -48,7 +48,7 @@
                         <li><a data-toggle="modal" href="#donate">Donate <i class="icon-gift icon-white"></i></a></li>
                         <li>
                             <form class="navbar-search">
-                                <input type="text" class="search-query" placeholder="Search">
+                                <input type="text" id="filter" class="search-query" placeholder="Search">
                             </form>
                         </li>
                     </ul> <!-- /.nav -->
@@ -189,19 +189,39 @@
             return p + Mustache.render(column_tmpl, c);
         }, ""));
 
-        // set up handlers
+        // suggestion form
         $('#suggest form').submit(function(e) {
             e.preventDefault();
             $.post('http://localhost:3000/suggest', $("#suggest form").serialize())
             .success(function() {
-                alert('success');
+                console.log('hooray');
                 // hide suggest
                 // pop up hooray modal
             })
             .error(function() {
-                alert('fail');
+                console.log('fail');
                 // try again modal
             });
+        });
+
+        // filtering
+        $('#filter').keyup(function() {
+            var search = $('#filter').attr('value');
+            console.log(search);
+            if (search === '') {
+                $('.place').show();
+            }
+            else {
+                $('.place').each(function() {
+                    var $place = $(this);
+                    var selectors = ['.address', '.name', '.notes'];
+                    var match = selectors.reduce(function(p,c) {
+                        return p || Boolean($place.find(c).text().toLowerCase().match(search));
+                    }, false);
+                    if (!match) { $place.hide(); }
+                    else { $place.show(); }
+                });
+            }
         });
     </script>
 </body>
