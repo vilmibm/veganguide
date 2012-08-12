@@ -46,9 +46,10 @@
                     <ul class="nav">
                         <li><a data-toggle="modal" href="#suggest">Suggest <i class="icon-comment icon-white"></i></a></li>
                         <li><a data-toggle="modal" href="#donate">Donate <i class="icon-gift icon-white"></i></a></li>
+                        <li><a id="random" href="#">Random! <i class="icon-random icon-white"></i></a></li>
                         <li>
                             <form class="navbar-search">
-                                <input type="text" id="filter" class="search-query" placeholder="Search">
+                                <input type="text" id="filter" class="search-query" placeholder="Filter">
                             </form>
                         </li>
                     </ul> <!-- /.nav -->
@@ -223,6 +224,17 @@
                 });
             }
         });
+
+        // random
+        $('#random').click(function() {
+            $('.highlight').removeClass('highlight');
+            var $places = $('.place:visible')
+            var index = Math.floor(Math.random() * ($places.length + 1));
+            var $place = $($places[index]);
+            $place.addClass('highlight');
+            $('html, body').animate({scrollTop: $place.offset().top-$place.height()}, 500);
+        });
+
     </script>
 </body>
 </html>

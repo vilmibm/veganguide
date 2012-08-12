@@ -1,4 +1,8 @@
 .template { display:none; }
+.highlight {
+    border-radius:5px;
+    background-color: rgb(215, 215, 215);
+}
 
 /* place template */
 .place {
