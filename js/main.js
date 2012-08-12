@@ -30,6 +30,9 @@ $('#suggest form').submit(function(e) {
     .success(function() {
         $('#suggest').modal('hide');
         $('#hooray').modal('show');
+        $('#suggest input[type=text]').each(function() {
+            $(this).val('');
+        });
     })
     .error(function() { $('#tryagain').modal('show'); });
 });
