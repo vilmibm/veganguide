@@ -6,6 +6,9 @@
 #content {
     margin-top:43px;
 }
+#subtitle:hover {
+    color:#999;
+}
 
 /* place template */
 .place {
