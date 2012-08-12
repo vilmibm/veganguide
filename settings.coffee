@@ -1,4 +1,3 @@
 exports.init = ->
-    #to_email: 'adriennefriend+vegguide@gmail.com'
-    to_email: 'nathanielksmith@gmail.com'
+    to_email: 'nobody@nowhere.com'
     port: 3000
