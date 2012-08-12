@@ -180,6 +180,16 @@
         // set up handlers
         $('#suggest form').submit(function(e) {
             e.preventDefault();
+            $.post('localhost:3000/suggest', $("#suggest form").serialize())
+            .success(function() {
+                alert('success');
+                // hide suggest
+                // pop up hooray modal
+            })
+            .error(function() {
+                alert('fail');
+                // try again modal
+            });
         });
     </script>
 </body>
