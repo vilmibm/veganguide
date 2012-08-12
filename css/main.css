@@ -3,6 +3,9 @@
     border-radius:5px;
     background-color: rgb(215, 215, 215);
 }
+#content {
+    margin-top:43px;
+}
 
 /* place template */
 .place {
@@ -31,10 +34,4 @@
 /* suggest modal */
 #suggest label.control-label {
     font-weight:bold;
-}
-
-
-/* bootstrap extensions */
-#content {
-    margin-top:43px;
 }

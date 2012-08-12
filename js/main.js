@@ -5,6 +5,8 @@
     $('#'+x).html(data[x])
 });
 
+if (!data.suggestions) { console.log('wtf'); $('li.suggestions').remove(); }
+
 // add map function
 data.columns.forEach(function(column) {
     column.places.forEach(function(p) {

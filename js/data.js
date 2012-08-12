@@ -2,6 +2,7 @@ var data =  {
     title: "Vegan City Guide",
     subtitle: 'Brought to you by rainbows and unicorns',
     footer: 'Fork me: ',
+    suggestions: false,
     columns: [{
         category: "Vegan ",
         places: [{
