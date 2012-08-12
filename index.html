@@ -66,7 +66,7 @@
     <footer>
         All location data &#169;  <a href="http://cracktheplates.com">crack the plates</a>. website code is <a href="http://github.com/nathanielksmith/vegguide">open source</a> and written by <a href="http://chiptheglasses.com">chip the glasses</a>.
     </footer>
-    <div class="modal fade" id="suggest">
+    <div class="modal fade hide" id="suggest">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><i class="icon-remove"></i></button>
             <h3>Suggest a place!</h3>
@@ -192,7 +192,7 @@
         // set up handlers
         $('#suggest form').submit(function(e) {
             e.preventDefault();
-            $.post('localhost:3000/suggest', $("#suggest form").serialize())
+            $.post('http://localhost:3000/suggest', $("#suggest form").serialize())
             .success(function() {
                 alert('success');
                 // hide suggest
