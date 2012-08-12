@@ -74,12 +74,71 @@
             missing? Let us know! A human will approve it and add it to the
             site in a few days.</p>
             <form class="well">
-                <label>Label name</label>
-                    <input type="text" class="span3" placeholder="Type something.">
-                    <span class="help-block">Example block-level help text here.</span>
-                    <label class="checkbox">
-                    <input type="checkbox"> Check me out
-                </label>
+                <label class="control-label">I'd like to suggest a</label>
+                <div class="controls">
+                    <label class="radio">
+                        <input type="radio" name="type" value="restaurant" checked="true" />
+                        restaurant
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="type" value="grocery" />
+                        grocery
+                    </label>
+                </div> <!-- /.controls -->
+                <label class="control-label">that's</label>
+                <div class="controls">
+                    <label class="radio">
+                        <input type="radio" name="vegliness" value="vegan" checked="true" />
+                        vegan.
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="vegliness" value="vegetarian" />
+                        vegetarian.
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="vegliness" value="friendly" />
+                        vegan Friendly.
+                    </label>
+                </div> <!-- /.controls -->
+                <div class="control-group">
+                    <label class="control-label" for="name">Name</label>
+                    <div class="controls">
+                        <input class="span2" id="name" name="name" type="text" placeholder="" />
+                    </div> <!-- /.controls -->
+                </div> <!-- /.control-group -->
+                <div class="control-group">
+                    <label class="control-label" for="price">Price per person</label>
+                    <div class="controls">
+                        <label class="checkbox">
+                            <input type="checkbox" name="price" value="$" />
+                            under $10
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="price" value="$$" />
+                            $10 - $20
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="price" value="$$$" />
+                            $20 - $30
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="price" value="$$$$" />
+                            over $30
+                        </label>
+                    </div> <!-- /.controls -->
+                </div> <!-- /.control-group -->
+                <div class="control-group">
+                    <label class="control-label" for="address">Street Adress</label>
+                    <div class="controls">
+                        <input class="span2" id="address" name="address" type="text" placeholder="555 foobar st." />
+                    </div> <!-- /.controls -->
+                </div> <!-- /.control-group -->
+                <div class="control-group">
+                    <label class="control-label" for="notes">Notes</label>
+                    <div class="controls">
+                        <input class="span2" id="notes" name="notes" type="text" placeholder="what sort of food, family-friendliness, etc" />
+                    </div> <!-- /.controls -->
+                </div> <!-- /.control-group -->
                 <button type="submit" class="btn">Submit</button>
             </form>
         </div> <!-- /.modal-body -->
@@ -107,10 +166,16 @@
         </div> <!-- /.modal-footer -->
     </div> <!-- /.modal -->
     <script>
+        // lay out data
         var column_tmpl = $('#column.template').html();
         $('#content div.row-fluid').html(data.reduce(function(p, c) {
             return p + Mustache.render(column_tmpl, c);
         }, ""));
+
+        // set up handlers
+        $('#suggest form').submit(function(e) {
+            e.preventDefault();
+        });
     </script>
 </body>
 </html>

@@ -1,4 +1,6 @@
 .template { display:none; }
+
+/* place template */
 .name {
     font-weight:bold;
 }
@@ -15,6 +17,12 @@
 .notes {
     font-size:70%;
 }
+
+/* suggest modal */
+#suggest label.control-label {
+    font-weight:bold;
+}
+
 
 /* bootstrap extensions */
 #content {
