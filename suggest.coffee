@@ -5,7 +5,7 @@ settings = (require './settings').init()
 app = express()
 
 app.get('/suggest', (req, res) ->
-    if req.body.human.toLowerCase() isnt in [12, 'twelve']
+    if req.body.human.toLowerCase() not in [12, 'twelve']
         res.send 500
     else
         Email(
@@ -18,3 +18,5 @@ app.get('/suggest', (req, res) ->
             res.send if err then 500 else 200
         )
 )
+
+app.listen 3000

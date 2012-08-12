@@ -1,6 +1,9 @@
 .template { display:none; }
 
 /* place template */
+.place {
+    margin-bottom:7px;
+}
 .name {
     font-weight:bold;
 }
@@ -12,10 +15,10 @@
     margin-bottom:0px;
 }
 .address {
-    font-size:80%;
+    font-size:95%;
 }
 .notes {
-    font-size:70%;
+    font-size:85%;
 }
 
 /* suggest modal */

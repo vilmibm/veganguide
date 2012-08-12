@@ -17,14 +17,16 @@
                 <h2>{{category}}</h2>
             </div> <!-- /.row-fluid -->
             {{#places}}
-            <div class="row-fluid">
-                <span class="name">{{name}}</span>
+            <div class="place row-fluid">
+                <span class="name">{{#link}}<a href="{{link}}" target="_blank">{{/link}}{{name}}{{#link}}</a>{{/link}}</span>
                 <span class="price">{{price}}</span>
                 <p class="address">
                     {{address}}
-                    <a href="{{map}}" target="_blank" >
+                    {{^map_override}}
+                    <a href="https://maps.google.com/maps?q={{map}}" target="_blank" >
                         <i class="icon-map-marker"></i>
                     </a>
+                    {{/map_override}}
                 </p>
                 <p class="notes"> {{{notes}}} </p>
             </div> <!-- /.row-fluid -->
@@ -171,6 +173,15 @@
         </div> <!-- /.modal-footer -->
     </div> <!-- /.modal -->
     <script>
+        // add map function
+        data.forEach(function(column) {
+            column.places.forEach(function(p) {
+                // gutenfleischers, mysore woodlands, graveyard, revolution, spoon west, we suki suki, arden's, tradjoe, wf
+                p.map = function() {
+                    return (this.name+' '+this.address).replace(/ /g, '+');
+                };
+            });
+        });
         // lay out data
         var column_tmpl = $('#column.template').html();
         $('#content div.row-fluid').html(data.reduce(function(p, c) {
