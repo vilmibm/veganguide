@@ -6,6 +6,7 @@
 });
 
 if (!data.suggestions) { console.log('wtf'); $('li.suggestions').remove(); }
+document.title = data.title;
 
 // add map function
 data.columns.forEach(function(column) {
