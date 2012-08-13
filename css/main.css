@@ -16,6 +16,10 @@
 }
 .phone {
     font-size:85%;
+    color:#333;
+}
+.phone:hover {
+    color:#333;
 }
 .name {
     font-weight:bold;
